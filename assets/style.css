@@ -178,3 +178,7 @@ img,iframe,video{max-width:100%}
 .teamphoto{margin:0 0 16px}
 .teamphoto img{width:100%;border-radius:12px;display:block;box-shadow:0 2px 10px rgba(0,0,0,.12)}
 .teamphoto .cap{text-align:center;font-size:13px;color:#5a6677;margin-top:8px}
+
+/* make <button class="btn"> look identical to <a class="btn"> */
+button.btn{font-family:inherit;font-size:inherit;line-height:inherit;border:1px solid var(--line,#d8dee6);cursor:pointer;-webkit-appearance:none;appearance:none}
+button.btn.solid{border-color:transparent}
