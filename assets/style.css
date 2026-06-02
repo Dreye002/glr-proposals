@@ -111,3 +111,17 @@ html,body{max-width:100%;overflow-x:hidden}
 .gl-proof-x{position:absolute;top:5px;right:7px;background:none;border:none;font-size:16px;color:#bbb;cursor:pointer;line-height:1;padding:2px}
 .gl-proof-x:hover{color:#777}
 @media(max-width:560px){#gl-proof{left:10px;right:10px;bottom:10px;max-width:none}}
+
+/* === base table + intro + checklist styling (were missing) === */
+.intro{font-size:16px;color:#3a4654;margin-bottom:14px;line-height:1.65}
+.tbl{width:100%;border-collapse:collapse;margin:14px 0;font-size:14.5px}
+.tbl th{background:#14803a;color:#fff;text-align:left;padding:11px 14px;font-weight:700;font-size:13.5px}
+.tbl th:first-child{border-top-left-radius:8px}
+.tbl th:last-child{border-top-right-radius:8px}
+.tbl td{padding:11px 14px;border-bottom:1px solid #e8edf1;vertical-align:top;color:#3a4654}
+.tbl tr:nth-child(even) td{background:#f7f9fb}
+.tbl td:first-child{font-weight:600;color:#1a2332;width:38%}
+.tbl td b{color:#14803a}
+.chk{display:inline-block;width:16px;height:16px;border:2px solid #14803a;border-radius:4px;margin-right:8px;vertical-align:middle;position:relative;flex:none}
+ul.q li{padding-left:28px}
+.gl-proof-trust{font-size:10.5px;color:#14803a;font-weight:600;margin-top:5px;border-top:1px solid #eef2f4;padding-top:5px}

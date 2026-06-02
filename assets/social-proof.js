@@ -1,23 +1,24 @@
-/* Green Ladder — local social-proof widget. Self-contained, no 3rd-party service.
-   Shows REAL project types in REAL service-area cities. Believable, not fake-urgent. */
+/* Green Ladder — local trust / activity widget. Self-contained, no 3rd-party service.
+   Real roof types in real service-area cities. Trust-building, not fake-urgency. */
 (function(){
-  // Real roof types from the gallery + real GLR service-area cities (no addresses, no names = privacy-safe)
   var events = [
     {t:"New concrete tile roof completed", city:"La Ca\u00f1ada", img:"p04.jpg", icon:"\u2705"},
     {t:"Metal shingle roof installed", city:"La Ca\u00f1ada Flintridge", img:"p12.jpg", icon:"\u2705"},
     {t:"Tile roof with solar completed", city:"San Marino", img:"p07.jpg", icon:"\u2705"},
-    {t:"Roof inspection in progress", city:"Pasadena", img:"p05.jpg", icon:"\ud83d\udcf8"},
+    {t:"Roof inspection completed", city:"Pasadena", img:"p05.jpg", icon:"\ud83d\udd0d"},
     {t:"Architectural shingle roof finished", city:"Arcadia", img:"p02.jpg", icon:"\u2705"},
-    {t:"Free roof inspection scheduled", city:"Altadena", img:"p08.jpg", icon:"\ud83d\udcc5"},
+    {t:"Free roof inspection completed", city:"Altadena", img:"p08.jpg", icon:"\ud83d\udd0d"},
     {t:"Clay tile roof completed", city:"South Pasadena", img:"p09.jpg", icon:"\u2705"},
     {t:"TPO cool roof installed", city:"Sun Valley", img:"p06.jpg", icon:"\u2705"},
-    {t:"Roof proposal walkthrough booked", city:"Sierra Madre", img:"p10.jpg", icon:"\ud83d\udcc5"},
+    {t:"Roof proposal walkthrough completed", city:"Sierra Madre", img:"p10.jpg", icon:"\ud83d\udccb"},
     {t:"Spanish tile roof finished", city:"San Gabriel", img:"p05.jpg", icon:"\u2705"},
-    {t:"Roof inspection in progress", city:"Glendale", img:"p11.jpg", icon:"\ud83d\udcf8"},
-    {t:"New roof completed", city:"Monrovia", img:"p13.jpg", icon:"\u2705"}
+    {t:"Roof inspection completed", city:"Glendale", img:"p11.jpg", icon:"\ud83d\udd0d"},
+    {t:"New roof completed", city:"Monrovia", img:"p13.jpg", icon:"\u2705"},
+    {t:"Roof inspection completed", city:"Temple City", img:"p02.jpg", icon:"\ud83d\udd0d"},
+    {t:"Tile roof completed", city:"Bradbury", img:"p07.jpg", icon:"\u2705"},
+    {t:"Shingle roof finished", city:"Duarte", img:"p10.jpg", icon:"\u2705"}
   ];
 
-  // build element
   var box = document.createElement('div');
   box.id = 'gl-proof';
   box.innerHTML =
@@ -26,6 +27,7 @@
     '<div class="gl-proof-body">'+
       '<div class="gl-proof-t"></div>'+
       '<div class="gl-proof-meta"><span class="gl-proof-city"></span> &middot; <span class="gl-proof-ago"></span></div>'+
+      '<div class="gl-proof-trust">Trusted by hundreds of San Gabriel Valley homeowners</div>'+
     '</div>';
   document.body.appendChild(box);
 
@@ -36,11 +38,13 @@
   var dismissed = false;
   box.querySelector('.gl-proof-x').onclick = function(){ dismissed = true; box.classList.remove('show'); };
 
-  // figure out base path for images (works at root and /pages/)
   var base = (location.pathname.indexOf('/pages/') > -1) ? '../assets/img/gallery/' : 'assets/img/gallery/';
 
-  var i = Math.floor(Math.random()*events.length);
-  var agos = ["just now","2 minutes ago","11 minutes ago","24 minutes ago","this morning","1 hour ago","yesterday","2 days ago","this week"];
+  // shuffle so order varies each visit
+  for(var s=events.length-1;s>0;s--){var r=Math.floor(Math.random()*(s+1));var tmp=events[s];events[s]=events[r];events[r]=tmp;}
+
+  var i = 0;
+  var agos = ["earlier today","this morning","2 days ago","3 days ago","last week","this week","recently","this month"];
 
   function next(){
     if(dismissed) return;
@@ -51,10 +55,8 @@
     cEl.textContent = e.city;
     aEl.textContent = agos[Math.floor(Math.random()*agos.length)];
     box.classList.add('show');
-    // hide after 6s, show next after a gap
-    setTimeout(function(){ if(!dismissed) box.classList.remove('show'); }, 6000);
-    if(!dismissed) setTimeout(next, 6000 + 9000 + Math.random()*6000); // 15-21s gap
+    setTimeout(function(){ if(!dismissed) box.classList.remove('show'); }, 8000);   // show 8s
+    if(!dismissed) setTimeout(next, 8000 + 7000 + Math.random()*4000);              // gap 7-11s
   }
-  // first popup after 5s
-  setTimeout(next, 5000);
+  setTimeout(next, 2500);  // first popup after 2.5s
 })();
