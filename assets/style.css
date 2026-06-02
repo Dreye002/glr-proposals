@@ -1,0 +1,98 @@
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--g:#14803a;--gd:#0f5f2c;--ink:#1a2332;--sub:#5a6677;--bg:#f7f9fb;--gold:#b8860b}
+body{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+a{color:var(--g)}
+.nav{background:#fff;border-bottom:1px solid #e2e8ec;position:sticky;top:0;z-index:10}
+.nav-in{max-width:880px;margin:0 auto;padding:12px 18px;display:flex;align-items:center;justify-content:space-between}
+.nav-in img{height:38px}
+.nav-badge{display:flex;align-items:center;gap:6px;background:#f4f8f5;border:1px solid #cfe3d6;border-radius:30px;padding:5px 12px}
+.nav-badge .s{color:#f5b50a;font-size:13px;letter-spacing:1px}
+.nav-badge .t{font-size:10px;color:var(--ink);font-weight:700;line-height:1.1}
+.nav-badge .t span{display:block;color:var(--sub);font-weight:600;font-size:9px}
+.hero{position:relative;color:#fff;padding:56px 22px;text-align:center;background:var(--g)}
+.hero.photo{background-size:cover;background-position:center}
+.hero.photo:before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(15,95,44,.82),rgba(15,95,44,.9))}
+.hero>*{position:relative;z-index:1}
+.hero .kicker{font-size:12px;letter-spacing:2px;text-transform:uppercase;opacity:.9;font-weight:700}
+.hero h1{font-size:30px;margin:8px 0 6px;line-height:1.2}
+.hero p{font-size:16px;opacity:.95;max-width:600px;margin:0 auto}
+.wrap{max-width:760px;margin:0 auto;padding:30px 20px}
+.card{background:#fff;border:1px solid #e8edf1;border-radius:12px;padding:24px 26px;margin:18px 0;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+h2{color:var(--g);font-size:20px;margin-bottom:10px;margin-top:6px}
+h3{color:var(--g);font-size:16px;margin:16px 0 4px}
+p{margin:8px 0}
+ul{list-style:none;margin:10px 0}
+li{margin:10px 0;padding-left:28px;position:relative}
+li:before{content:"\2713";position:absolute;left:0;top:0;color:var(--g);font-weight:800}
+.photo-strip{width:100%;height:230px;object-fit:cover;border-radius:12px;margin:16px 0;display:block}
+.box{border-left:4px solid var(--gold);background:#fffbe6;padding:14px 18px;border-radius:6px;margin:16px 0}
+.cta{background:var(--g);color:#fff;border-radius:12px;padding:24px;margin:24px 0;text-align:center}
+.cta h2{color:#fff}
+.cta p{opacity:.95}
+.btn{display:inline-block;background:#fff;color:var(--g);font-weight:700;text-decoration:none;padding:13px 26px;border-radius:8px;margin:8px 6px 0}
+.btn.solid{background:var(--gold);color:#fff}
+.btn-row{margin-top:12px}
+.dl{display:inline-block;font-size:13px;color:var(--sub);text-decoration:none;margin-top:10px}
+.dl:before{content:"\2193 ";font-weight:700}
+.foot{text-align:center;color:#888;font-size:12px;padding:26px 20px;border-top:1px solid #e8edf1;margin-top:20px}
+.foot a{color:#888}
+.disclaim{font-size:11px;color:#aaa;max-width:600px;margin:12px auto 0}
+/* hub grid */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px;margin-top:8px}
+.tile{background:#fff;border:1px solid #e8edf1;border-radius:12px;overflow:hidden;text-decoration:none;color:var(--ink);box-shadow:0 1px 4px rgba(0,0,0,.04);transition:transform .12s,box-shadow .12s}
+.tile:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.1)}
+.tile img{width:100%;height:130px;object-fit:cover;display:block}
+.tile .body{padding:14px 16px}
+.tile .body b{color:var(--g);font-size:15px;display:block}
+.tile .body span{font-size:13px;color:var(--sub)}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.gallery-grid figure{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.gallery-grid img{width:100%;height:170px;object-fit:cover;display:block}
+.gallery-grid figcaption{padding:10px 12px}
+.gallery-grid b{color:var(--g);font-size:14px;display:block}
+.gallery-grid span{font-size:12px;color:var(--sub)}
+@media(max-width:600px){.hero h1{font-size:24px}.wrap{padding:20px 14px}.card{padding:18px 16px}}
+
+/* === mobile: convert tables to stacked cards (no horizontal overflow) === */
+@media(max-width:560px){
+ .tbl,.tbl tbody,.tbl tr,.tbl td,.tbl th{display:block;width:100%}
+ .tbl{border:none}
+ .tbl thead,.tbl tr:first-child:has(th){display:none}
+ .tbl tr{background:#fff !important;border:1px solid #e2e8ec;border-radius:10px;margin:10px 0;padding:12px 14px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+ .tbl td{border:none !important;padding:3px 0 !important}
+ .tbl td:first-child{font-size:15px;color:var(--g)}
+ .tbl td:first-child b{color:var(--g)}
+ .tbl td:last-child{color:#5a6677;font-size:14px}
+ .chk{margin-bottom:4px}
+ .tabbar-in{padding-bottom:0}
+ .tabbtn{font-size:13px;padding:13px 13px}
+ .hero{padding:40px 18px}
+ .hero h1{font-size:23px}
+ .gallery-grid{grid-template-columns:1fr 1fr}
+}
+/* hide the header row of tables that use first row as <th> */
+@media(max-width:560px){
+ .tbl tr:first-child th{display:none}
+ .tbl tr:has(th){display:none}
+}
+
+/* word-wrap safety everywhere */
+.tbl td,.card p,.card li,.cap,.tile .body{overflow-wrap:break-word;word-wrap:break-word}
+
+/* === mobile overflow + responsive fixes (Harry audit 2026-06-01) === */
+html,body{max-width:100%;overflow-x:hidden}
+.card,.cta,.hero,.wrap,.tile,.gallery-grid,.topnav-in>*{min-width:0}
+.topnav-in{min-width:0;gap:10px}
+.topbadge{flex-shrink:1;min-width:0}
+@media(max-width:560px){
+ .topnav-in{padding:10px 12px}
+ .topnav-in img{height:34px;max-width:62%}
+ .topbadge .t span{display:none}
+ .topbadge{padding:5px 10px}
+ .tabbar{overflow-x:auto;max-width:100vw}
+ .tabbar-in{width:max-content;max-width:none}
+ .hero h1,.hero p,.card,.intro,.cta{max-width:100%;overflow-wrap:anywhere}
+ .btn-row{display:flex;flex-direction:column;gap:10px}
+ .btn{width:100%;margin:0;text-align:center}
+ .grid{grid-template-columns:1fr}
+}
