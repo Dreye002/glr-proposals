@@ -125,3 +125,20 @@ html,body{max-width:100%;overflow-x:hidden}
 .chk{display:inline-block;width:16px;height:16px;border:2px solid #14803a;border-radius:4px;margin-right:8px;vertical-align:middle;position:relative;flex:none}
 ul.q li{padding-left:28px}
 .gl-proof-trust{font-size:10.5px;color:#14803a;font-weight:600;margin-top:5px;border-top:1px solid #eef2f4;padding-top:5px}
+
+/* === overflow hard-guard + sticky CTA (Harry P0 2026-06-01) === */
+html,body{max-width:100%;overflow-x:hidden;margin:0}
+*{box-sizing:border-box}
+.topnav-in,.tabbar-in,.wrap{max-width:980px;width:100%;box-sizing:border-box}
+img,iframe,video{max-width:100%}
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;gap:8px;padding:10px 12px;background:rgba(255,255,255,.97);border-top:1px solid #e2e8ec;box-shadow:0 -3px 14px rgba(0,0,0,.1)}
+.sticky-cta a{flex:1;text-align:center;text-decoration:none;font-weight:700;font-size:14px;padding:13px 8px;border-radius:9px}
+.sticky-cta .scall{background:var(--g);color:#fff}
+.sticky-cta .stext{background:var(--gold);color:#fff}
+.sticky-cta .ssec{background:#fff;color:var(--g);border:2px solid var(--g)}
+@media(max-width:760px){.sticky-cta{display:flex} body{padding-bottom:72px}}
+/* readiness routing buttons */
+.routing{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0}
+.routing a{text-decoration:none;background:#fff;border:1.5px solid #cfe3d6;border-radius:10px;padding:14px;text-align:center;font-weight:700;color:#14803a;font-size:14px}
+.routing a:hover{background:#f4f8f5}
+@media(max-width:560px){.routing{grid-template-columns:1fr}}
