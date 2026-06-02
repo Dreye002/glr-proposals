@@ -173,3 +173,8 @@ img,iframe,video{max-width:100%}
 .badges-label{width:100%;text-align:center;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#8a97a5;font-weight:700;margin-bottom:2px}
 .hero-mascot{position:absolute;right:4%;bottom:0;height:88%;max-height:340px;z-index:2;pointer-events:none}
 @media(max-width:760px){.badges{gap:16px}.badges img{height:56px}.badges .gr{height:46px}.hero-mascot{display:none}}
+
+/* team photo block */
+.teamphoto{margin:0 0 16px}
+.teamphoto img{width:100%;border-radius:12px;display:block;box-shadow:0 2px 10px rgba(0,0,0,.12)}
+.teamphoto .cap{text-align:center;font-size:13px;color:#5a6677;margin-top:8px}
